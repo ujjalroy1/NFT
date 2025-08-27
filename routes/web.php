@@ -4,9 +4,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -20,5 +20,5 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('user',[HomeController::class,'index'])->name('user');
+Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('admin',[HomeController::class,'admin_index'])->name('admin')->middleware('auth','admin');
